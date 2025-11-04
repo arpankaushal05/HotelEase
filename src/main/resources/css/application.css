@@ -1,0 +1,121 @@
+.root {
+    -fx-font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+}
+
+.title-label {
+    -fx-font-size: 24px;
+    font-size: 24px;
+    -fx-font-weight: bold;
+    font-weight: bold;
+}
+
+.success-label {
+    -fx-text-fill: #2e7d32;
+}
+
+.error-label {
+    -fx-text-fill: #c62828;
+}
+
+.button {
+    -fx-padding: 8 16;
+    padding: 8px 16px;
+    -fx-background-color: #000000;
+    -fx-text-fill: #ffffff;
+    background-color: #000000;
+    color: #ffffff;
+}
+
+.app-background {
+    background-image: url("../bg/rest.jpg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    -fx-background-image: url("../bg/rest.jpg");
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center center;
+    -fx-background-size: cover;
+}
+
+.translucent-table {
+    background-color: rgba(0, 0, 0, 0.45);
+    -fx-background-color: rgba(0, 0, 0, 0.45);
+    -fx-background-radius: 12;
+    padding: 8px;
+    -fx-padding: 8;
+}
+
+.translucent-table .column-header-background {
+    background-color: transparent;
+    -fx-background-color: transparent;
+}
+
+.translucent-table .table-row-cell {
+    background-color: transparent;
+    -fx-background-color: transparent;
+}
+
+.translucent-table .table-row-cell:odd {
+    background-color: rgba(255, 255, 255, 0.08);
+    -fx-background-color: rgba(255, 255, 255, 0.08);
+}
+
+.translucent-table .table-row-cell:selected {
+    background-color: rgba(255, 255, 255, 0.25);
+    -fx-background-color: rgba(255, 255, 255, 0.25);
+    -fx-text-fill: #ffffff;
+}
+
+.translucent-panel {
+    background-color: rgba(0, 0, 0, 0.45);
+    -fx-background-color: rgba(0, 0, 0, 0.45);
+    -fx-background-radius: 12;
+    padding: 16px;
+    -fx-padding: 16;
+}
+
+.translucent-panel .list-view,
+.translucent-panel .text-area,
+.translucent-panel .text-area .content {
+    background-color: transparent;
+    -fx-background-color: transparent;
+}
+
+.translucent-panel .list-view .list-cell {
+    background-color: transparent;
+    -fx-background-color: transparent;
+}
+
+.translucent-panel .list-view .list-cell:odd {
+    background-color: rgba(255, 255, 255, 0.08);
+    -fx-background-color: rgba(255, 255, 255, 0.08);
+}
+
+.translucent-panel .list-view .list-cell:selected {
+    background-color: rgba(255, 255, 255, 0.25);
+    -fx-background-color: rgba(255, 255, 255, 0.25);
+    -fx-text-fill: #ffffff;
+}
+
+.translucent-control {
+    background-color: rgba(0, 0, 0, 0.45);
+    -fx-background-color: rgba(0, 0, 0, 0.45);
+    -fx-background-radius: 12;
+    color: #ffffff;
+    -fx-text-fill: #ffffff;
+}
+
+.translucent-control .cell,
+.translucent-control .list-cell {
+    background-color: transparent;
+    -fx-background-color: transparent;
+    -fx-text-fill: #ffffff;
+}
+
+.translucent-control .cell:selected,
+.translucent-control .list-cell:selected {
+    background-color: rgba(255, 255, 255, 0.25);
+    -fx-background-color: rgba(255, 255, 255, 0.25);
+    -fx-text-fill: #ffffff;
+}

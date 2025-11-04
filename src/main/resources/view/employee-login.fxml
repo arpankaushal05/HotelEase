@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.media.MediaView?>
+
+<StackPane xmlns="http://javafx.com/javafx/17.0.1" xmlns:fx="http://javafx.com/fxml/1"
+           fx:controller="com.hotelease.controller.EmployeeLoginController" fx:id="rootPane"
+           prefWidth="900" prefHeight="600">
+    <MediaView fx:id="backgroundVideo" preserveRatio="false"/>
+    <BorderPane>
+        <center>
+            <VBox spacing="12" alignment="CENTER">
+                <Label text="Employee Login" styleClass="title-label"/>
+                <ComboBox fx:id="roleComboBox" prefWidth="220" promptText="Select Role"/>
+                <TextField fx:id="usernameField" promptText="Username"/>
+                <PasswordField fx:id="passwordField" promptText="Password"/>
+                <Button text="Login" onAction="#handleLogin" minWidth="160"/>
+                <Label fx:id="statusLabel" wrapText="true" maxWidth="260"/>
+                <Hyperlink text="Back to launch" onAction="#backToLaunch"/>
+            </VBox>
+        </center>
+        <padding>
+            <Insets top="40" right="40" bottom="40" left="40"/>
+        </padding>
+    </BorderPane>
+</StackPane>

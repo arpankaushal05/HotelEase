@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.media.MediaView?>
+<?import javafx.scene.layout.*?>
+
+<StackPane xmlns="http://javafx.com/javafx/17.0.1" xmlns:fx="http://javafx.com/fxml/1"
+           fx:controller="com.hotelease.controller.LaunchController" fx:id="rootPane"
+           prefWidth="900" prefHeight="600">
+    <MediaView fx:id="backgroundVideo" fitHeight="600" fitWidth="900" preserveRatio="false"/>
+    <BorderPane fx:id="contentPane">
+        <center>
+            <VBox spacing="18" alignment="CENTER" prefWidth="360">
+                <Label text="Welcome to HotelEase" styleClass="title-label"/>
+                <Button text="Guest" onAction="#openGuestLogin" minWidth="180"/>
+                <Button text="Employee" onAction="#openEmployeeLogin" minWidth="180"/>
+                <Button text="Admin" onAction="#openAdminLogin" minWidth="180"/>
+            </VBox>
+        </center>
+        <padding>
+            <Insets top="60" right="60" bottom="60" left="60"/>
+        </padding>
+    </BorderPane>
+</StackPane>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.media.MediaView?>
+
+<StackPane xmlns="http://javafx.com/javafx/17.0.1" xmlns:fx="http://javafx.com/fxml/1"
+           fx:controller="com.hotelease.controller.GuestRegisterController" fx:id="rootPane"
+           prefWidth="900" prefHeight="600">
+    <MediaView fx:id="backgroundVideo" preserveRatio="false"/>
+    <BorderPane>
+        <center>
+            <VBox spacing="12" alignment="CENTER" prefWidth="360">
+                <Label text="Create Account" styleClass="title-label"/>
+                <TextField fx:id="usernameField" promptText="Username"/>
+                <TextField fx:id="emailField" promptText="Email"/>
+                <TextField fx:id="phoneField" promptText="Phone Number"/>
+                <PasswordField fx:id="passwordField" promptText="Password"/>
+                <PasswordField fx:id="confirmPasswordField" promptText="Confirm Password"/>
+                <HBox spacing="10" alignment="CENTER">
+                    <Button text="Register" onAction="#handleRegister"/>
+                    <Button text="Cancel" onAction="#handleCancel"/>
+                </HBox>
+                <Label fx:id="statusLabel" wrapText="true" maxWidth="260"/>
+            </VBox>
+        </center>
+        <padding>
+            <Insets top="40" right="40" bottom="40" left="40"/>
+        </padding>
+    </BorderPane>
+</StackPane>

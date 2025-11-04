@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/17.0.1" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.hotelease.controller.booking.BookingController" styleClass="app-background">
+    <top>
+        <HBox alignment="CENTER_LEFT" spacing="16">
+            <Label fx:id="headerLabel" text="Bookings" styleClass="title-label"/>
+            <Region HBox.hgrow="ALWAYS"/>
+            <Button text="Dashboard" onAction="#handleBack"/>
+            <padding>
+                <Insets top="20" right="20" bottom="20" left="20"/>
+            </padding>
+        </HBox>
+    </top>
+    <center>
+        <BorderPane>
+            <center>
+                <TableView fx:id="bookingTable" styleClass="translucent-table">
+                    <columns>
+                        <TableColumn fx:id="guestColumn" text="Guest" prefWidth="160"/>
+                        <TableColumn fx:id="roomColumn" text="Room" prefWidth="100"/>
+                        <TableColumn fx:id="checkInColumn" text="Check-In" prefWidth="120"/>
+                        <TableColumn fx:id="checkOutColumn" text="Check-Out" prefWidth="120"/>
+                        <TableColumn fx:id="statusColumn" text="Status" prefWidth="140"/>
+                    </columns>
+                </TableView>
+            </center>
+            <right>
+                <VBox spacing="10" prefWidth="320">
+                    <TextField fx:id="guestNameField" promptText="Guest name"/>
+                    <TextField fx:id="roomNumberField" promptText="Room number"/>
+                    <DatePicker fx:id="checkInPicker" promptText="Check-in date"/>
+                    <DatePicker fx:id="checkOutPicker" promptText="Check-out date"/>
+                    <ChoiceBox fx:id="statusChoiceBox" prefWidth="Infinity"/>
+                    <HBox spacing="10">
+                        <Button text="New" onAction="#handleNewBooking"/>
+                        <Button text="Refresh" onAction="#handleRefresh"/>
+                    </HBox>
+                    <Button text="Save" onAction="#handleSaveBooking" maxWidth="Infinity"/>
+                    <Label fx:id="statusLabel" wrapText="true"/>
+                    <padding>
+                        <Insets top="20" right="20" bottom="20" left="20"/>
+                    </padding>
+                </VBox>
+            </right>
+        </BorderPane>
+    </center>
+</BorderPane>

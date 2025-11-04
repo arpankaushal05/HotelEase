@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/17.0.1" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.hotelease.controller.RegisterEmployeeController">
+    <center>
+        <VBox spacing="12" alignment="CENTER_LEFT" prefWidth="360">
+            <Label text="Register Employee" styleClass="title-label"/>
+            <TextField fx:id="usernameField" promptText="Username"/>
+            <TextField fx:id="emailField" promptText="Email"/>
+            <TextField fx:id="phoneField" promptText="Phone Number"/>
+            <PasswordField fx:id="passwordField" promptText="Password"/>
+            <PasswordField fx:id="confirmPasswordField" promptText="Confirm Password"/>
+            <ChoiceBox fx:id="roleChoiceBox" prefWidth="260"/>
+            <HBox spacing="10" alignment="CENTER_RIGHT">
+                <Button text="Register" onAction="#handleRegister"/>
+                <Button text="Close" onAction="#handleClose"/>
+            </HBox>
+            <Label fx:id="statusLabel" wrapText="true" maxWidth="320"/>
+        </VBox>
+    </center>
+    <padding>
+        <Insets top="20" right="20" bottom="20" left="20"/>
+    </padding>
+</BorderPane>

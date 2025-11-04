@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/17.0.1" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.hotelease.controller.dashboard.DashboardController" styleClass="app-background">
+    <top>
+        <VBox spacing="8" alignment="CENTER">
+            <Label fx:id="welcomeLabel" styleClass="title-label" text="Welcome"/>
+        </VBox>
+    </top>
+    <center>
+        <VBox spacing="16" alignment="CENTER">
+            <FlowPane fx:id="rolesPane" hgap="10" vgap="10" alignment="CENTER"/>
+            <HBox spacing="12" alignment="CENTER">
+                <Button fx:id="bookingsButton" text="Bookings" onAction="#openBookingModule"/>
+                <Button fx:id="roomsButton" text="Rooms" onAction="#openRoomModule"/>
+                <Button fx:id="billingButton" text="Billing" onAction="#openBillingModule"/>
+                <Button fx:id="housekeepingButton" text="Housekeeping" onAction="#openHousekeepingModule" visible="false" managed="false"/>
+                <Button fx:id="helpButton" text="Help" onAction="#openHelpModule" visible="false" managed="false"/>
+            </HBox>
+            <Button fx:id="registerEmployeeButton" text="Register Employee" onAction="#openRegisterEmployee"
+                    visible="false" managed="false" minWidth="200"/>
+        </VBox>
+    </center>
+    <padding>
+        <Insets top="20" right="20" bottom="20" left="20"/>
+    </padding>
+</BorderPane>

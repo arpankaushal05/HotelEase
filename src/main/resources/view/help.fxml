@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/17.0.1" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.hotelease.controller.help.HelpController" styleClass="app-background">
+    <top>
+        <VBox alignment="CENTER" spacing="8">
+            <Label text="Help &amp; Support" styleClass="title-label"/>
+        </VBox>
+    </top>
+    <left>
+        <VBox spacing="12" alignment="TOP_CENTER" prefWidth="260">
+            <VBox fx:id="guestSelectionContainer" spacing="8" alignment="TOP_CENTER">
+                <ListView fx:id="guestBookingListView" prefHeight="220" styleClass="translucent-control"/>
+                <ChoiceBox fx:id="recipientChoiceBox" prefWidth="200" styleClass="translucent-control"/>
+            </VBox>
+            <VBox fx:id="staffConversationContainer" spacing="8" alignment="TOP_CENTER">
+                <Label text="Conversations" styleClass="subtitle-label"/>
+                <TableView fx:id="conversationTable" prefHeight="260" prefWidth="240" styleClass="translucent-table">
+                    <columns>
+                        <TableColumn fx:id="roomColumn" text="Room" prefWidth="75"/>
+                        <TableColumn fx:id="guestColumn" text="Guest" prefWidth="95"/>
+                        <TableColumn fx:id="roleColumn" text="Role" prefWidth="70"/>
+                        <TableColumn fx:id="unreadColumn" text="Unread" prefWidth="55"/>
+                    </columns>
+                </TableView>
+            </VBox>
+            <Button fx:id="refreshButton" text="Refresh" onAction="#handleRefresh" maxWidth="Infinity"/>
+        </VBox>
+    </left>
+    <center>
+        <VBox spacing="12" alignment="TOP_LEFT" styleClass="translucent-panel" maxWidth="520">
+            <ListView fx:id="messageListView" prefHeight="360"/>
+            <TextArea fx:id="messageInput" promptText="Type your message" wrapText="true" prefRowCount="3"/>
+            <HBox spacing="10" alignment="CENTER_LEFT">
+                <Button fx:id="sendButton" text="Send" onAction="#handleSend"/>
+                <Button fx:id="backButton" text="Back" onAction="#handleBack"/>
+            </HBox>
+            <Label fx:id="statusLabel" wrapText="true" maxWidth="480"/>
+        </VBox>
+    </center>
+    <padding>
+        <Insets top="20" right="20" bottom="20" left="20"/>
+    </padding>
+</BorderPane>

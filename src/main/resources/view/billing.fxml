@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/17.0.1" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.hotelease.controller.billing.BillingController" styleClass="app-background">
+    <top>
+        <HBox spacing="10" alignment="CENTER_LEFT">
+            <Label text="Billing &amp; Payments" styleClass="title-label"/>
+            <Pane HBox.hgrow="ALWAYS"/>
+            <Label text="Status:"/>
+            <ComboBox fx:id="statusFilterCombo" prefWidth="140"/>
+            <Button fx:id="refreshButton" text="Refresh" onAction="#handleRefresh"/>
+            <padding>
+                <Insets top="10" right="10" bottom="10" left="10"/>
+            </padding>
+        </HBox>
+    </top>
+    <center>
+        <VBox spacing="12" alignment="CENTER">
+            <TableView fx:id="billTable" prefHeight="360" prefWidth="760" styleClass="translucent-table">
+                <columns>
+                    <TableColumn fx:id="invoiceColumn" text="Invoice" prefWidth="120"/>
+                    <TableColumn fx:id="guestColumn" text="Guest" prefWidth="180"/>
+                    <TableColumn fx:id="guestPhoneColumn" text="Phone" prefWidth="140"/>
+                    <TableColumn fx:id="amountColumn" text="Amount" prefWidth="120"/>
+                    <TableColumn fx:id="statusColumn" text="Status" prefWidth="100"/>
+                    <TableColumn fx:id="issuedColumn" text="Issued" prefWidth="120"/>
+                    <TableColumn fx:id="dueColumn" text="Due" prefWidth="120"/>
+                </columns>
+            </TableView>
+            <HBox spacing="10" alignment="CENTER_RIGHT" prefWidth="760">
+                <Button fx:id="backButton" text="Back" onAction="#handleBack"/>
+                <Button fx:id="markPaidButton" text="Mark as Paid" onAction="#handleMarkPaid"/>
+            </HBox>
+            <Label fx:id="statusLabel" wrapText="true" maxWidth="360"/>
+            <padding>
+                <Insets top="10" right="10" bottom="10" left="10"/>
+            </padding>
+        </VBox>
+    </center>
+    <padding>
+        <Insets top="20" right="20" bottom="20" left="20"/>
+    </padding>
+</BorderPane>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/17.0.1" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.hotelease.controller.housekeeping.HousekeepingController" styleClass="app-background">
+    <top>
+        <VBox alignment="CENTER" spacing="8">
+            <Label text="Housekeeping" styleClass="title-label"/>
+        </VBox>
+    </top>
+    <center>
+        <VBox spacing="12" alignment="CENTER" prefWidth="720">
+            <TableView fx:id="roomTable" prefHeight="320" prefWidth="700" styleClass="translucent-table">
+                <columns>
+                    <TableColumn fx:id="numberColumn" text="Room" prefWidth="160"/>
+                    <TableColumn fx:id="typeColumn" text="Type" prefWidth="200"/>
+                    <TableColumn fx:id="statusColumn" text="Status" prefWidth="220"/>
+                </columns>
+            </TableView>
+            <HBox spacing="12" alignment="CENTER">
+                <Button fx:id="markMaintenanceButton" text="Mark Maintenance" onAction="#handleMarkMaintenance"/>
+                <Button fx:id="markAvailableButton" text="Mark Available" onAction="#handleMarkAvailable"/>
+                <Button text="Refresh" onAction="#handleRefresh"/>
+            </HBox>
+            <HBox spacing="12" alignment="CENTER">
+                <Button fx:id="backButton" text="Back" onAction="#handleBack"/>
+            </HBox>
+            <Label fx:id="statusLabel" wrapText="true" maxWidth="480"/>
+        </VBox>
+    </center>
+    <padding>
+        <Insets top="20" right="20" bottom="20" left="20"/>
+    </padding>
+</BorderPane>

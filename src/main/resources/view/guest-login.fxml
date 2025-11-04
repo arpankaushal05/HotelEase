@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.media.MediaView?>
+<?import javafx.scene.layout.*?>
+
+<StackPane xmlns="http://javafx.com/javafx/17.0.1" xmlns:fx="http://javafx.com/fxml/1"
+           fx:controller="com.hotelease.controller.GuestLoginController" fx:id="rootPane"
+           prefWidth="900" prefHeight="600">
+    <MediaView fx:id="backgroundVideo" preserveRatio="false"/>
+    <BorderPane fx:id="contentPane">
+        <center>
+            <VBox spacing="12.0" alignment="CENTER">
+                <Label text="Guest Login" styleClass="title-label"/>
+                <TextField fx:id="usernameField" promptText="Username"/>
+                <PasswordField fx:id="passwordField" promptText="Password"/>
+                <HBox spacing="10" alignment="CENTER">
+                    <Button fx:id="loginButton" text="Login" onAction="#handleLogin"/>
+                    <Button text="Register" onAction="#openRegistration"/>
+                </HBox>
+                <Label fx:id="statusLabel" text="" wrapText="true" maxWidth="260"/>
+                <Hyperlink text="Back to launch" onAction="#backToLaunch"/>
+            </VBox>
+        </center>
+        <padding>
+            <Insets top="40" right="40" bottom="40" left="40"/>
+        </padding>
+    </BorderPane>
+</StackPane>

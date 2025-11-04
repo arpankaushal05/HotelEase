@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/17.0.1" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.hotelease.controller.room.RoomController" styleClass="app-background">
+    <center>
+        <VBox spacing="16" alignment="CENTER" prefWidth="720">
+            <Label text="Room Management" styleClass="title-label"/>
+            <TableView fx:id="roomTable" prefHeight="300" prefWidth="700" styleClass="translucent-table">
+                <columns>
+                    <TableColumn fx:id="numberColumn" text="Room" prefWidth="120"/>
+                    <TableColumn fx:id="typeColumn" text="Type" prefWidth="160"/>
+                    <TableColumn fx:id="statusColumn" text="Status" prefWidth="180"/>
+                    <TableColumn fx:id="rateColumn" text="Rate" prefWidth="160"/>
+                </columns>
+            </TableView>
+            <VBox fx:id="guestDetailsContainer" spacing="12" alignment="CENTER_LEFT" prefWidth="700">
+                <Label text="Selected Room" styleClass="subtitle-label"/>
+                <GridPane hgap="10" vgap="6">
+                    <columnConstraints>
+                        <ColumnConstraints halignment="RIGHT" minWidth="120"/>
+                        <ColumnConstraints hgrow="ALWAYS"/>
+                    </columnConstraints>
+
+                    <Label text="Room:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+                    <Label fx:id="detailRoomNumberLabel" text="-" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+                    <Label text="Type:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+                    <Label fx:id="detailRoomTypeLabel" text="-" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+                    <Label text="Status:" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+                    <Label fx:id="detailRoomStatusLabel" text="-" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+
+                    <Label text="Rate:" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+                    <Label fx:id="detailRoomRateLabel" text="-" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+                </GridPane>
+                <HBox spacing="10" alignment="CENTER_LEFT">
+                    <DatePicker fx:id="guestCheckInPicker" promptText="Check-in"/>
+                    <DatePicker fx:id="guestCheckOutPicker" promptText="Check-out"/>
+                    <Button fx:id="bookButton" text="Book Room" onAction="#handleBook" disable="true"/>
+                </HBox>
+            </VBox>
+
+            <VBox fx:id="adminControlsContainer" spacing="12" alignment="CENTER" prefWidth="700">
+                <GridPane hgap="10" vgap="10">
+                    <columnConstraints>
+                        <ColumnConstraints halignment="RIGHT" minWidth="120"/>
+                        <ColumnConstraints hgrow="ALWAYS"/>
+                    </columnConstraints>
+
+                    <Label text="Room Number:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+                    <TextField fx:id="roomNumberField" GridPane.rowIndex="0" GridPane.columnIndex="1" promptText="101"/>
+
+                    <Label text="Type:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+                    <ComboBox fx:id="roomTypeCombo" GridPane.rowIndex="1" GridPane.columnIndex="1" promptText="Select type"/>
+
+                    <Label text="Status:" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+                    <ComboBox fx:id="statusCombo" GridPane.rowIndex="2" GridPane.columnIndex="1" promptText="Select status"/>
+
+                    <Label text="Rate:" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+                    <TextField fx:id="rateField" GridPane.rowIndex="3" GridPane.columnIndex="1" promptText="120.00"/>
+                </GridPane>
+                <HBox spacing="10" alignment="CENTER">
+                    <Button fx:id="saveButton" text="Save" onAction="#handleSave"/>
+                    <Button fx:id="clearButton" text="Clear" onAction="#handleClear"/>
+                    <Button fx:id="deleteButton" text="Delete" onAction="#handleDelete"/>
+                </HBox>
+            </VBox>
+
+            <HBox alignment="CENTER_LEFT">
+                <Button fx:id="backButton" text="Back" onAction="#handleBack"/>
+            </HBox>
+
+            <Label fx:id="statusLabel" wrapText="true" maxWidth="360"/>
+        </VBox>
+    </center>
+    <padding>
+        <Insets top="20" right="20" bottom="20" left="20"/>
+    </padding>
+</BorderPane>
